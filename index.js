@@ -61,14 +61,13 @@ async function run() {
     });
     //delete order
     app.delete("/orders/:id", async (req, res) => {
-      console.log(req.params.id);
       const result = await ordersCollection.deleteOne({
         _id: ObjectId(req.params.id),
       });
       res.send(result);
     });
 
-    //update status
+    //update status pending
     app.put("/orders/:id", async (req, res) => {
       const updatedInfo = req.body;
       const result = await ordersCollection.updateOne(

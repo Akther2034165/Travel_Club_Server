@@ -23,7 +23,7 @@ async function run() {
     //post spots
     app.post("/tourspots", (req, res) => {
       tourspotsCollection.insertOne(req.body).then((result) => {
-        res.send(result.insertedId);
+        res.json(result.insertedId);
       });
     });
     //get all tourist spots

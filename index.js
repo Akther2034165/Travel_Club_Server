@@ -68,7 +68,7 @@ async function run() {
       res.send(result);
     });
 
-    //update status
+    //update status pending
     app.put("/orders/:id", async (req, res) => {
       const updatedInfo = req.body;
       const result = await ordersCollection.updateOne(
